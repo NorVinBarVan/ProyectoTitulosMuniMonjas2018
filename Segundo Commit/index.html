@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Títulos Agua Potable</title>
+
+  <link rel="icon" type="image/jpg" href="https://firebasestorage.googleapis.com/v0/b/prueba21072018.appspot.com/o/favicon-20180915035448626.ico?alt=media&token=57c0c031-d44d-4351-9488-c1add5af694a"/>
+
+  <!-- BOOTSTRAP 4 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+  crossorigin="anonymous">
+
+  <!-- CSS3 -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- JQUERY -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  <!-- BOOTSTRAP CSS DATATABLE -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FONTS TEMPLATE DATATABLE -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <!-- PLUGIN CSS DATATABLE -->
+  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+</head>
+
+<!-- GOOGLE'S PLATFORM PLUGIN -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<!-- FIRESTORE -->
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+
+<!-- CUERPO DEL PROGRAMA -->
+<body>
+
+
+        <!-- FRONTEND USUARIOS -->
+        <div class="container">
+          <div style="text-align:center">
+            <h1>CONTROL DE TÍTULOS AGUA POTABLE</h1>
+          </div>
+          <input type="number" id="no_titulo" placeholder="Número de Título" class="form-control my-3" required="required"/>
+          <input type="text" onKeyUp="this.value=this.value.toUpperCase();" id="nombre_contribuyente" placeholder="Nombre del Contribuyente"
+            class="form-control my-3" required="required"/>
+          <input type="text" onKeyUp="this.value=this.value.toUpperCase();" id="direccion" placeholder="Dirección" class="form-control my-3">
+          <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="fecha" placeholder="Fecha de Inscripción" class="form-control my-3"/>
+          <input type="text" onKeyUp="this.value=this.value.toUpperCase();" id="observaciones" placeholder="Observaciones" class="form-control my-3">
+          
+          <button class="btn btn-info" id="boton" 
+          onclick="
+          if (confirm('AL MOMENTO DE GUARDAR ESTE TÍTULO NO PODRÁ SER MODIFICADO NI ELIMINADO ¿ESTÁ SEGURO DE REGISTRARLO?')) {
+            guardar()
+            }"> Guardar</button>
+
+          <br><br>
+
+          <table class="table my-3 table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">No. Titulo</th>
+                <th scope="col">Nombre Contribuyente</th>
+                <th scope="col">Dirección</th>
+                <th scope="col">Fecha Inscripción</th>
+                <th scope="col">Observaciones</th>
+                <th scope="col">ID</th>
+        </div>
+              </tr>
+            </thead>
+            <tbody id="tabla">
+            </tbody>
+          </table>
+        </div>
+        <br><br>
+    </div>
+    </div>
+  </section>
+
+  <!-- COMPILED AND MINIFIED JAVASCRIPT -->
+  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+  <!-- OPTIONAL JAVASCRIPT -->
+  <!-- JQUERY FIRST, THEN POPPER.JS, THEN BOOTSTRAP JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+    crossorigin="anonymous"></script>
+
+  <!-- BOOTSTRAP JAVASCRIPT -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- PLUGIN JAVASCRIPT -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- PLUGIN JAVASCRIPT DATATABLE -->
+  <script src="vendor/datatables/jquery.dataTables.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+  <!-- CUSTOM SCRIPTS -->
+  <script src="js/sb-admin.min.js"></script>
+
+  <!-- DEMO SCRIPTS DATATABLE -->
+  <script src="js/demo/datatables-demo.js"></script>
+
+  <!-- ENLACE A ARCHIVO JAVASCRIPT -->
+  <script src="app.js"></script>
+
+</body>
+</html>
